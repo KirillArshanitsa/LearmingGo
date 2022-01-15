@@ -7,24 +7,24 @@ import (
 )
 
 func (api *Api)ConfigLoggerFiled() error{
-	logLevel, err := logrus.ParseLevel(api.Config.LogLevel)
+	logLevel, err := logrus.ParseLevel(api.config.LogLevel)
 	if err != nil{
-		logrus.Println("Error parse log level %s - %s", api.Config.LogLevel, err)
+		logrus.Println("Error parse log level %s - %s", api.config.LogLevel, err)
 		return err
 	}
 	logrus.SetLevel(logLevel)
-	logrus.Println("Set log level -%s", api.Config.LogLevel)
+	logrus.Println("Set log level", api.config.LogLevel)
 	return nil
 }
 
 
 func (api *Api) configureRouterFiled(){
-	api.Router.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
+	api.router.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
 		writer.WriteHeader(http.StatusOK)
 		writer.Write([]byte("It's work!"))
 	})
 }
 
 func (api *Api)configureDbFiled() *storage.Storage{
-	return storage.NewStorage(api.Config.ConfigDb)
+	return storage.NewStorage(api.config.ConfigDb)
 }

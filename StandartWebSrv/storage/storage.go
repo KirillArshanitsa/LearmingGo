@@ -2,34 +2,43 @@ package storage
 
 import (
 	"database/sql"
+	_ "github.com/lib/pq"
 	"github.com/sirupsen/logrus"
 )
 
 type Storage struct{
-	DbUri string
+
+	config *ConfigDb
+	db *sql.DB
 }
 
 
 func NewStorage(db *ConfigDb) *Storage{
-	return &Storage{DbUri: db.DbUri}
+	return &Storage{config: db}
 }
 
 
 func (storage *Storage) OpenConnect() error{
-	db, err := sql.Open("postgres", storage.DbUri)
+	db, err := sql.Open("postgres", storage.config.DbUri)
 	if err != nil{
-		logrus.Println("Error create db connection %s - %s", storage.DbUri, err)
+		logrus.Println("Error create db connection %s - %s", storage.config.DbUri, err)
 		return err
 	}
 	err = db.Ping()
 	if err != nil{
-		logrus.Println("Error open db connection %s - %s", storage.DbUri, err)
+		logrus.Println("Error open db connection %s - %s", storage.config.DbUri, err)
 		return err
 	}
+	storage.db = db
 	return nil
 }
 
-func (storage *Storage) CloseConnect(){
-	storage.CloseConnect()
-	logrus.Println("Db %s connection close", storage.DbUri)
+func (storage *Storage) CloseConnect() error{
+	err := storage.db.Close()
+	if err != nil{
+		logrus.Println("Error close db connection %s - %s", storage.config.DbUri, err)
+		return err
+	}
+	logrus.Println("Db %s connection close", storage.config.DbUri)
+	return nil
 }
