@@ -3,8 +3,8 @@ package api
 import "StandartWebServer/storage"
 
 type Config struct{
-	Port string `toml:"bind_port"`
-	LogLevel string `toml:"log_level"`
+	Port string `toml:"bind_port" env:"bind_port"`
+	LogLevel string `toml:"log_level" env:"log_level"`
 	ConfigDb *storage.ConfigDb
 }
 

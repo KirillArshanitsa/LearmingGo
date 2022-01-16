@@ -7,7 +7,6 @@ import (
 )
 
 type Storage struct{
-
 	config *ConfigDb
 	db *sql.DB
 }
@@ -21,12 +20,12 @@ func NewStorage(db *ConfigDb) *Storage{
 func (storage *Storage) OpenConnect() error{
 	db, err := sql.Open("postgres", storage.config.DbUri)
 	if err != nil{
-		logrus.Println("Error create db connection %s - %s", storage.config.DbUri, err)
+		logrus.Printf("Error create db connection %s - %s", storage.config.DbUri, err)
 		return err
 	}
 	err = db.Ping()
 	if err != nil{
-		logrus.Println("Error open db connection %s - %s", storage.config.DbUri, err)
+		logrus.Printf("Error open db connection %s - %s", storage.config.DbUri, err)
 		return err
 	}
 	storage.db = db
@@ -36,9 +35,9 @@ func (storage *Storage) OpenConnect() error{
 func (storage *Storage) CloseConnect() error{
 	err := storage.db.Close()
 	if err != nil{
-		logrus.Println("Error close db connection %s - %s", storage.config.DbUri, err)
+		logrus.Println("Error close db connection ", err)
 		return err
 	}
-	logrus.Println("Db %s connection close", storage.config.DbUri)
+	logrus.Println("Db connection close")
 	return nil
 }

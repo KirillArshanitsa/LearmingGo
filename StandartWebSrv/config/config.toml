@@ -1,6 +1,6 @@
-[Web_server]
+#[Web_server]
 bind_port = "8081"
 log_level = "debug"
 
-[Storage]
-database_uri = "host=localhost port=5432 user=postgres password=postgres dbname=mydb sslmode=disable"
+[ConfigDb]
+database_uri = "host=localhost port=5432 user=postgres password=password dbname=postgres sslmode=disable"
