@@ -9,6 +9,8 @@ import (
 type Storage struct{
 	config *ConfigDb
 	db *sql.DB
+	articleRepository *ArticleRepository
+	userRepository *UserRepository
 }
 
 
@@ -41,3 +43,20 @@ func (storage *Storage) CloseConnect() error{
 	logrus.Println("Db connection close")
 	return nil
 }
+
+func (storage *Storage) GetUserRepository() *UserRepository{
+	if storage.userRepository != nil{
+		return storage.userRepository
+	}
+	storage.userRepository = &UserRepository{storage: storage}
+	return storage.userRepository
+}
+
+func (storage *Storage) GetArticleRepository() *ArticleRepository{
+	if storage.articleRepository != nil{
+		return storage.articleRepository
+	}
+	storage.articleRepository = &ArticleRepository{storage: storage}
+	return storage.articleRepository
+}
+

@@ -9,7 +9,6 @@ import (
 func (api *Api)ConfigLoggerFiled() error{
 	logLevel, err := logrus.ParseLevel(api.config.LogLevel)
 	if err != nil{
-		logrus.Println("Error parse log level %s - %s", api.config.LogLevel, err)
 		return err
 	}
 	logrus.SetLevel(logLevel)
@@ -23,8 +22,19 @@ func (api *Api) configureRouterFiled(){
 		writer.WriteHeader(http.StatusOK)
 		writer.Write([]byte("It's work!"))
 	})
+
+	api.router.HandleFunc("/CreateUser", api.CreateUser).Methods("POST")
+	api.router.HandleFunc("/GetAllUsers", api.GetAllUsers).Methods("GET")
+	api.router.HandleFunc("/DeleteUser/{id}", api.DeleteUser).Methods("DELETE")
+	api.router.HandleFunc("/ChangeUser", api.ChangeUser).Methods("POST")
 }
 
-func (api *Api)configureDbFiled() *storage.Storage{
-	return storage.NewStorage(api.config.ConfigDb)
+func (api *Api)configureDbFiled() error{
+	storageLocal := storage.NewStorage(api.config.ConfigDb)
+	err := storageLocal.OpenConnect()
+	if err != nil{
+		return err
+	}
+	api.storage = storageLocal
+	return nil
 }

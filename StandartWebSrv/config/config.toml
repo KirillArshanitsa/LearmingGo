@@ -4,3 +4,5 @@ log_level = "debug"
 
 [ConfigDb]
 database_uri = "host=localhost port=5432 user=postgres password=password dbname=postgres sslmode=disable"
+#migrate create -ext sql -dir migrations Name
+#PS C:\Users\....\go\bin> migrate -source file:"H:\git\LearmingGo\StandartWebSrv\migrations" -database "postgres://localhost:5432/postgres?sslmode=disable&user=postgres&password=password" up

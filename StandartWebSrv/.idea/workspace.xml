@@ -20,13 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81d4aca6-8acc-48a6-a3b8-43c451c4d37b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/api/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/api/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/api/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/storage/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/api/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/api/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/api/helper.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/api/helper.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/storage.go" beforeDir="false" afterPath="$PROJECT_DIR$/storage/storage.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +60,7 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="Docker" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -97,6 +97,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -110,6 +111,14 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="877" y="332" key="#HTTP_Proxy/0.0.2194.1194@0.0.2194.1194" timestamp="1642335002966" />
+    <state x="812" y="303" width="927" height="626" key="#New_Docker_Connection" timestamp="1642360268529">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="812" y="303" width="927" height="626" key="#New_Docker_Connection/0.0.2194.1194@0.0.2194.1194" timestamp="1642360268529" />
+    <state x="474" y="535" key="#SQL_Dialects" timestamp="1642858856660">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="474" y="535" key="#SQL_Dialects/0.0.2194.1194@0.0.2194.1194" timestamp="1642858856660" />
     <state x="690" y="255" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1642335042469">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
@@ -119,25 +128,29 @@
     </state>
     <state x="752" y="368" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2194.1194@0.0.2194.1194" timestamp="1642336158866" />
     <state x="614" y="338" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1792.1015@0.25.1792.1015" timestamp="1642239106714" />
-    <state width="2151" height="290" key="GridCell.Tab.0.bottom" timestamp="1642340336231">
+    <state x="257" y="307" key="FileChooserDialogImpl" timestamp="1642360297429">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2151" height="290" key="GridCell.Tab.0.bottom/0.0.2194.1194@0.0.2194.1194" timestamp="1642340336231" />
+    <state x="257" y="307" key="FileChooserDialogImpl/0.0.2194.1194@0.0.2194.1194" timestamp="1642360297429" />
+    <state width="2136" height="255" key="GridCell.Tab.0.bottom" timestamp="1642873864010">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state width="2136" height="255" key="GridCell.Tab.0.bottom/0.0.2194.1194@0.0.2194.1194" timestamp="1642873864010" />
     <state width="1750" height="274" key="GridCell.Tab.0.bottom/0.25.1792.1017@0.25.1792.1017" timestamp="1642249996674" />
-    <state width="2151" height="290" key="GridCell.Tab.0.center" timestamp="1642340336231">
+    <state width="2136" height="255" key="GridCell.Tab.0.center" timestamp="1642873864010">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2151" height="290" key="GridCell.Tab.0.center/0.0.2194.1194@0.0.2194.1194" timestamp="1642340336231" />
+    <state width="2136" height="255" key="GridCell.Tab.0.center/0.0.2194.1194@0.0.2194.1194" timestamp="1642873864010" />
     <state width="1750" height="274" key="GridCell.Tab.0.center/0.25.1792.1017@0.25.1792.1017" timestamp="1642249996674" />
-    <state width="2151" height="290" key="GridCell.Tab.0.left" timestamp="1642340336231">
+    <state width="2136" height="255" key="GridCell.Tab.0.left" timestamp="1642873864010">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2151" height="290" key="GridCell.Tab.0.left/0.0.2194.1194@0.0.2194.1194" timestamp="1642340336231" />
+    <state width="2136" height="255" key="GridCell.Tab.0.left/0.0.2194.1194@0.0.2194.1194" timestamp="1642873864010" />
     <state width="1750" height="274" key="GridCell.Tab.0.left/0.25.1792.1017@0.25.1792.1017" timestamp="1642249996673" />
-    <state width="2151" height="290" key="GridCell.Tab.0.right" timestamp="1642340336231">
+    <state width="2136" height="255" key="GridCell.Tab.0.right" timestamp="1642873864010">
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
-    <state width="2151" height="290" key="GridCell.Tab.0.right/0.0.2194.1194@0.0.2194.1194" timestamp="1642340336231" />
+    <state width="2136" height="255" key="GridCell.Tab.0.right/0.0.2194.1194@0.0.2194.1194" timestamp="1642873864010" />
     <state width="1750" height="274" key="GridCell.Tab.0.right/0.25.1792.1017@0.25.1792.1017" timestamp="1642249996674" />
     <state width="1293" height="291" key="GridCell.Tab.1.bottom" timestamp="1642271939780">
       <screen x="0" y="0" width="2194" height="1194" />
@@ -155,5 +168,9 @@
       <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state width="1293" height="291" key="GridCell.Tab.1.right/0.0.2194.1194@0.0.2194.1194" timestamp="1642271939780" />
+    <state x="552" y="225" key="SettingsEditor" timestamp="1642360362272">
+      <screen x="0" y="0" width="2194" height="1194" />
+    </state>
+    <state x="552" y="225" key="SettingsEditor/0.0.2194.1194@0.0.2194.1194" timestamp="1642360362272" />
   </component>
 </project>
